@@ -27,13 +27,6 @@ class Properties {
     return json ? JSON.parse(value || '{}') : value;
   }
 
-  getUserProperties() {
-    if (this.getUserProps()) {
-      return this.getUserProps().getProperties();
-    }
-    return {};
-  }
-
   setUserProperty(key, value, json = false) {
     if (this.getUserProps()) {
       const save = json ? JSON.stringify(value) : value;

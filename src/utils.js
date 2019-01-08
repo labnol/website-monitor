@@ -25,3 +25,9 @@ export const include = filename =>
   HtmlService.createHtmlOutputFromFile(filename).getContent();
 
 export const TITLE = 'Website Monitor';
+
+export const DEVELOPER = 'amit@labnol.org';
+
+export const CODES = {
+  SUCCESS: 200
+};

@@ -1,6 +1,7 @@
 import { expBackoff, sleep } from './utils';
 
 const TRIGGER = 'trigger_WebsiteMonitor';
+const INTERVAL = 5;
 
 const toggleTrigger = enableTrigger => {
   const triggerList = {};
@@ -18,7 +19,7 @@ const toggleTrigger = enableTrigger => {
     if (!triggerList[TRIGGER]) {
       ScriptApp.newTrigger(TRIGGER)
         .timeBased()
-        .everyMinutes(5)
+        .everyMinutes(INTERVAL)
         .create();
       sleep();
     }

@@ -1,4 +1,4 @@
-import { expBackoff, logException, TITLE } from './utils';
+import { expBackoff, logException, TITLE, DEVELOPER } from './utils';
 
 const sendEmailAlert = (settings, status) => {
   try {
@@ -13,7 +13,7 @@ const sendEmailAlert = (settings, status) => {
       MailApp.sendEmail(email, subject, `${site} is ${status}`, {
         htmlBody: html.evaluate().getContent(),
         name: TITLE,
-        replyTo: 'amit@labnol.org'
+        replyTo: DEVELOPER
       });
     }
   } catch (f) {

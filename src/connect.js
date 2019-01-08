@@ -18,9 +18,6 @@ const sitecall = func => {
 
 const getSiteStatus = (url = '') => {
   try {
-    if (url === 'https://www.labnol.org') {
-      return [200, 403, 404, 99][(Math.random() * 4).toFixed()];
-    }
     const response = sitecall(() =>
       UrlFetchApp.fetch(url, {
         validateHttpsCertificates: false,

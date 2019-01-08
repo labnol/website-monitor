@@ -6,7 +6,7 @@ const writeToGoogleSheet = message => {
   try {
     SpreadsheetApp.getActiveSheet().appendRow([new Date(), message]);
   } catch (f) {
-    // do nothing
+    logException(f);
   }
 };
 

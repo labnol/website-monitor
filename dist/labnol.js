@@ -47,16 +47,20 @@
     }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 5);
 }([ function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
-    __webpack_require__.d(__webpack_exports__, "d", function() {
+    __webpack_require__.d(__webpack_exports__, "f", function() {
         return logException;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
+    }), __webpack_require__.d(__webpack_exports__, "d", function() {
         return expBackoff;
-    }), __webpack_require__.d(__webpack_exports__, "e", function() {
+    }), __webpack_require__.d(__webpack_exports__, "g", function() {
         return sleep;
-    }), __webpack_require__.d(__webpack_exports__, "c", function() {
+    }), __webpack_require__.d(__webpack_exports__, "e", function() {
         return include;
-    }), __webpack_require__.d(__webpack_exports__, "a", function() {
+    }), __webpack_require__.d(__webpack_exports__, "c", function() {
         return TITLE;
+    }), __webpack_require__.d(__webpack_exports__, "b", function() {
+        return DEVELOPER;
+    }), __webpack_require__.d(__webpack_exports__, "a", function() {
+        return CODES;
     });
     var logException = function logException(e) {
         console.error(e);
@@ -73,7 +77,9 @@
         Utilities.sleep(1e3 * seconds);
     }, include = function include(filename) {
         return HtmlService.createHtmlOutputFromFile(filename).getContent();
-    }, TITLE = "Website Monitor";
+    }, TITLE = "Website Monitor", DEVELOPER = "amit@labnol.org", CODES = {
+        SUCCESS: 200
+    };
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     var utils = __webpack_require__(0);
@@ -97,7 +103,7 @@
             key: "getUserCache",
             value: function() {
                 if (null === this.userCache) try {
-                    this.userCache = Object(utils["b"])(function() {
+                    this.userCache = Object(utils["d"])(function() {
                         return CacheService.getUserCache();
                     });
                 } catch (f) {
@@ -152,7 +158,7 @@
             key: "getUserProps",
             value: function() {
                 if (null === this.userProps) try {
-                    this.userProps = Object(utils["b"])(function() {
+                    this.userProps = Object(utils["d"])(function() {
                         return PropertiesService.getUserProperties();
                     });
                 } catch (f) {
@@ -167,11 +173,6 @@
                 if (!this.getUserProps()) return null;
                 var value = src_cache.getUserCacheValue("user".concat(key)) || this.getUserProps().getProperty(key);
                 return json ? JSON.parse(value || "{}") : value;
-            }
-        }, {
-            key: "getUserProperties",
-            value: function() {
-                return this.getUserProps() ? this.getUserProps().getProperties() : {};
             }
         }, {
             key: "setUserProperty",
@@ -194,24 +195,25 @@
             }
         } ]), Properties;
     }())(), trigger = __webpack_require__(2);
-    __webpack_require__.d(__webpack_exports__, "c", function() {
-        return server_saveSettings;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
+    __webpack_require__.d(__webpack_exports__, "b", function() {
         return server_getSettings;
     }), __webpack_require__.d(__webpack_exports__, "a", function() {
         return server_getLastStatus;
     }), __webpack_require__.d(__webpack_exports__, "d", function() {
         return server_setLastStatus;
+    }), __webpack_require__.d(__webpack_exports__, "c", function() {
+        return server_saveSettings;
     });
-    var server_saveSettings = function(value) {
-        return props.setUserProperty("settings", value), Object(trigger["a"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(utils["a"], " is now running!")), 
-        "Settings updated!";
-    }, server_getSettings = function() {
+    var server_getSettings = function() {
         return props.getUserProperty("settings", !0) || {};
     }, server_getLastStatus = function() {
-        return +(props.getUserProperty("status") || 200);
+        return +(props.getUserProperty("status") || utils["a"].SUCCESS);
     }, server_setLastStatus = function(status) {
         props.setUserProperty("status", status);
+    }, server_saveSettings = function(value) {
+        return props.setUserProperty("settings", value), server_setLastStatus(utils["a"].SUCCESS), 
+        Object(trigger["a"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(utils["c"], " is now running!")), 
+        "Settings updated!";
     };
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
@@ -223,17 +225,17 @@
     var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0), TRIGGER = "trigger_WebsiteMonitor", toggleTrigger = function toggleTrigger(enableTrigger) {
         var triggerList = {};
         ScriptApp.getProjectTriggers().forEach(function(trigger) {
-            enableTrigger ? triggerList[trigger.getHandlerFunction()] = !0 : (Object(_utils__WEBPACK_IMPORTED_MODULE_0__["b"])(function() {
+            enableTrigger ? triggerList[trigger.getHandlerFunction()] = !0 : (Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
                 return ScriptApp.deleteTrigger(trigger);
-            }), Object(_utils__WEBPACK_IMPORTED_MODULE_0__["e"])());
+            }), Object(_utils__WEBPACK_IMPORTED_MODULE_0__["g"])());
         }), enableTrigger && (triggerList[TRIGGER] || (ScriptApp.newTrigger(TRIGGER).timeBased().everyMinutes(5).create(), 
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["e"])()));
+        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["g"])()));
     }, deleteTrigger = function deleteTrigger() {
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["b"])(function() {
+        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
             return toggleTrigger(!1);
         });
     }, createTrigger = function createTrigger() {
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["b"])(function() {
+        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
             return toggleTrigger(!0);
         });
     };
@@ -247,7 +249,7 @@
         return removeWebsiteMonitor;
     });
     var _trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2), _server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1), _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0), onOpen = function onOpen() {
-        SpreadsheetApp.getActiveSpreadsheet().addMenu("➪ ".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["a"]), [ {
+        SpreadsheetApp.getActiveSpreadsheet().addMenu("➪ ".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["c"]), [ {
             name: "Configure",
             functionName: "showSidebar"
         }, null, {
@@ -257,21 +259,21 @@
     }, showSidebar = function showSidebar() {
         var html = HtmlService.createTemplateFromFile("sidebar"), _getSettings = Object(_server__WEBPACK_IMPORTED_MODULE_1__["b"])(), _getSettings$site = _getSettings.site, site = void 0 === _getSettings$site ? "" : _getSettings$site, _getSettings$email = _getSettings.email, email = void 0 === _getSettings$email ? "" : _getSettings$email, _getSettings$ga = _getSettings.ga, ga = void 0 === _getSettings$ga ? "" : _getSettings$ga;
         html.site = site, html.email = email, html.ga = ga, html.sheet = SpreadsheetApp.getActiveSpreadsheet().getUrl();
-        var sidebar = html.evaluate().setTitle(_utils__WEBPACK_IMPORTED_MODULE_2__["a"]);
+        var sidebar = html.evaluate().setTitle(_utils__WEBPACK_IMPORTED_MODULE_2__["c"]);
         SpreadsheetApp.getUi().showSidebar(sidebar);
     }, removeWebsiteMonitor = function removeWebsiteMonitor() {
-        Object(_trigger__WEBPACK_IMPORTED_MODULE_0__["b"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["a"], " stopped!"));
+        Object(_trigger__WEBPACK_IMPORTED_MODULE_0__["b"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["c"], " stopped!"));
     };
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     var server = __webpack_require__(1), utils = __webpack_require__(0), connect = function() {
         var url = 0 < arguments.length && arguments[0] !== undefined ? arguments[0] : "";
         try {
-            return "https://www.labnol.org" === url ? [ 200, 403, 404, 99 ][(4 * Math.random()).toFixed()] : function(func) {
+            return function(func) {
                 for (var n = 0; n < 3; n += 1) try {
                     return func();
                 } catch (e) {
-                    if (2 === n) throw Object(utils["d"])(e), e;
+                    if (2 === n) throw Object(utils["f"])(e), e;
                     Utilities.sleep(2e4 * Math.pow(2, n) + Math.round(1e3 * Math.random()));
                 }
                 return null;
@@ -283,48 +285,49 @@
                 });
             }).getResponseCode();
         } catch (f) {
-            return Object(utils["d"])(f), 99;
+            return Object(utils["f"])(f), 99;
         }
     }, s4 = function s4() {
         return Math.floor(65536 * (1 + Math.random())).toString(16).substring(1);
     }, guid = function guid() {
-        return "".concat(s4() + s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4()).concat(s4()).concat(s4());
+        return "".concat(s4()).concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4()).concat(s4()).concat(s4());
     }, analytics = function(id, site, status) {
         if (id) try {
-            var request = [ "https://ssl.google-analytics.com/collect?v=1", "t=event", "ec=".concat(encodeURIComponent(utils["a"])), "tid=".concat(id), "z=".concat(Math.round(new Date().getTime() / 1e3).toString()), "cid=".concat(guid()), "ea=".concat(encodeURIComponent(site)), "el=".concat(status) ].join("&");
+            var request = [ "https://ssl.google-analytics.com/collect?v=1", "t=event", "ec=".concat(encodeURIComponent(utils["c"])), "tid=".concat(id), "z=".concat(Math.round(new Date().getTime() / 1e3)), "cid=".concat(guid()), "ea=".concat(encodeURIComponent(site)), "el=".concat(status) ].join("&");
             UrlFetchApp.fetch(request, {
                 muteHttpExceptions: !0
             });
         } catch (e) {
-            Object(utils["d"])(e);
+            Object(utils["f"])(e);
         }
     }, mail = function(settings, status) {
         try {
             var site = settings.site, _settings$email = settings.email, email = void 0 === _settings$email ? "" : _settings$email, _settings$sheet = settings.sheet, sheet = void 0 === _settings$sheet ? "" : _settings$sheet, subject = "Website ".concat(status, " Alert - ").concat(site);
-            if (1 < Object(utils["b"])(function() {
+            if (1 < Object(utils["d"])(function() {
                 return MailApp.getRemainingDailyQuota();
             })) {
                 var html = HtmlService.createTemplateFromFile("email");
                 html.site = site, html.status = status.toLowerCase(), html.sheet = sheet, MailApp.sendEmail(email, subject, "".concat(site, " is ").concat(status), {
                     htmlBody: html.evaluate().getContent(),
-                    name: utils["a"],
-                    replyTo: "amit@labnol.org"
+                    name: utils["c"],
+                    replyTo: utils["b"]
                 });
             }
         } catch (f) {
-            Object(utils["d"])(f);
+            Object(utils["f"])(f);
         }
-    }, writeToGoogleSheet = function writeToGoogleSheet(message) {
-        try {
-            SpreadsheetApp.getActiveSheet().appendRow([ new Date(), message ]);
-        } catch (f) {}
     }, log = function(settings, status) {
         try {
             var site = settings.site, _settings$ga = settings.ga, ga = void 0 === _settings$ga ? "" : _settings$ga;
-            writeToGoogleSheet([ site, "is", status ].join(" ")), analytics(ga, site, status), 
-            mail(settings, status);
+            !function(message) {
+                try {
+                    SpreadsheetApp.getActiveSheet().appendRow([ new Date(), message ]);
+                } catch (f) {
+                    Object(utils["f"])(f);
+                }
+            }([ site, "is", status ].join(" ")), analytics(ga, site, status), mail(settings, status);
         } catch (f) {
-            Object(utils["d"])(f);
+            Object(utils["f"])(f);
         }
     };
     __webpack_exports__["a"] = function() {
@@ -332,10 +335,10 @@
             var settings = Object(server["b"])();
             if (settings.site) {
                 var newStatus = connect(settings.site), oldStatus = Object(server["a"])();
-                oldStatus !== newStatus && (Object(server["d"])(newStatus), 200 === newStatus ? log(settings, "Up") : 200 === oldStatus && log(settings, "Down"));
+                oldStatus !== newStatus && (Object(server["d"])(newStatus), newStatus === utils["a"].SUCCESS ? log(settings, "Up") : oldStatus === utils["a"].SUCCESS && log(settings, "Down"));
             }
         } catch (f) {
-            Object(utils["d"])(f);
+            Object(utils["f"])(f);
         }
     };
 }, function(module, __webpack_exports__, __webpack_require__) {
@@ -344,7 +347,7 @@
         var _ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3), _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4), _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0), _server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
         global.onOpen = _ui__WEBPACK_IMPORTED_MODULE_0__["a"], global.showSidebar = _ui__WEBPACK_IMPORTED_MODULE_0__["c"], 
         global.uninstall = _ui__WEBPACK_IMPORTED_MODULE_0__["b"], global.trigger_WebsiteMonitor = _main__WEBPACK_IMPORTED_MODULE_1__["a"], 
-        global.include = _utils__WEBPACK_IMPORTED_MODULE_2__["c"], global.saveSettings = _server__WEBPACK_IMPORTED_MODULE_3__["c"];
+        global.include = _utils__WEBPACK_IMPORTED_MODULE_2__["e"], global.saveSettings = _server__WEBPACK_IMPORTED_MODULE_3__["c"];
     }.call(this, __webpack_require__(6));
 }, function(module, exports) {
     var g;

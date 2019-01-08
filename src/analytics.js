@@ -6,7 +6,7 @@ const s4 = () =>
     .substring(1);
 
 const guid = () =>
-  `${s4() + s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
+  `${s4()}${s4()}-${s4()}-${s4()}-${s4()}-${s4()}${s4()}${s4()}`;
 
 const writeToGoogleAnalytics = (id, site, status) => {
   if (id) {
@@ -16,7 +16,7 @@ const writeToGoogleAnalytics = (id, site, status) => {
         't=event',
         `ec=${encodeURIComponent(TITLE)}`,
         `tid=${id}`,
-        `z=${Math.round(new Date().getTime() / 1000).toString()}`,
+        `z=${Math.round(new Date().getTime() / 1000)}`,
         `cid=${guid()}`,
         `ea=${encodeURIComponent(site)}`,
         `el=${status}`
