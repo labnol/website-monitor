@@ -1,4 +1,4 @@
-import { expBackoff } from './utils';
+import { expBackoff, logException } from './utils';
 
 const sendEmailAlert = (settings, status) => {
   try {
@@ -17,7 +17,7 @@ const sendEmailAlert = (settings, status) => {
       });
     }
   } catch (f) {
-    console.error(f);
+    logException(f);
   }
 };
 
