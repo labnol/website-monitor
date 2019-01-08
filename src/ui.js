@@ -1,6 +1,8 @@
 import { deleteTrigger } from './trigger';
 import { getSettings } from './server';
 
+const TITLE = 'Website Monitor';
+
 export const onOpen = () => {
   const sheet = SpreadsheetApp.getActiveSpreadsheet();
   const menu = [
@@ -9,7 +11,7 @@ export const onOpen = () => {
     { name: '✖ Uninstall', functionName: 'uninstall' }
   ];
 
-  sheet.addMenu('➪ Website Monitor', menu);
+  sheet.addMenu(`➪ ${TITLE}`, menu);
 };
 
 export const showSidebar = () => {
@@ -19,11 +21,11 @@ export const showSidebar = () => {
   html.email = email;
   html.ga = ga;
   html.sheet = SpreadsheetApp.getActiveSpreadsheet().getUrl();
-  const sidebar = html.evaluate().setTitle('Website Monitor');
+  const sidebar = html.evaluate().setTitle(TITLE);
   SpreadsheetApp.getUi().showSidebar(sidebar);
 };
 
 export const removeWebsiteMonitor = () => {
   deleteTrigger();
-  SpreadsheetApp.getActiveSpreadsheet().toast('Website Monitor stopped!');
+  SpreadsheetApp.getActiveSpreadsheet().toast(`${TITLE} stopped!`);
 };

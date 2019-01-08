@@ -2,7 +2,7 @@ import properties from './props';
 import { createTrigger } from './trigger';
 
 const SETTINGS = 'settings';
-const LAST_STATUS = 'last';
+const LAST_STATUS = 'status';
 
 export const saveSettings = value => {
   properties.setUserProperty(SETTINGS, value);
