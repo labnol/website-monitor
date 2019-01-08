@@ -1,5 +1,6 @@
 import writeToGoogleAnalytics from './analytics';
 import sendEmailAlert from './mail';
+import { logException } from './utils';
 
 const writeToGoogleSheet = message => {
   try {
@@ -16,7 +17,7 @@ const logEvent = (settings, status) => {
     writeToGoogleAnalytics(ga, site, status);
     sendEmailAlert(settings, status);
   } catch (f) {
-    Logger.log(f.toString());
+    logException(f);
   }
 };
 

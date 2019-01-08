@@ -1,6 +1,7 @@
 import { getSettings, getLastStatus, setLastStatus } from './server';
 import getUpStatus from './connect';
 import logEvent from './log';
+import { logException } from './utils';
 
 const main = () => {
   try {
@@ -23,7 +24,7 @@ const main = () => {
       }
     }
   } catch (f) {
-    Logger.log(f.toString());
+    logException(f);
   }
 };
 

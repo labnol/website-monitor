@@ -1,3 +1,5 @@
+import { logException } from './utils';
+
 const s4 = () =>
   Math.floor((1 + Math.random()) * 0x10000)
     .toString(16)
@@ -21,7 +23,7 @@ const writeToGoogleAnalytics = (id, site, status) => {
       ].join('&');
       UrlFetchApp.fetch(request, { muteHttpExceptions: true });
     } catch (e) {
-      // do nothing
+      logException(e);
     }
   }
 };

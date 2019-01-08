@@ -17,7 +17,7 @@ const sendEmailAlert = (settings, status) => {
       });
     }
   } catch (f) {
-    Logger.log(f.toString());
+    console.error(f);
   }
 };
 
