@@ -1,5 +1,5 @@
 import { getSettings, getLastStatus, setLastStatus } from './server';
-import getUpStatus from './connect';
+import getSiteStatus from './connect';
 import logEvent from './log';
 import { logException } from './utils';
 
@@ -7,7 +7,7 @@ const main = () => {
   try {
     const settings = getSettings();
     if (settings.site) {
-      const newStatus = getUpStatus(settings.site);
+      const newStatus = getSiteStatus(settings.site);
       const oldStatus = getLastStatus();
       if (oldStatus !== newStatus) {
         setLastStatus(newStatus);

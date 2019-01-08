@@ -1,7 +1,6 @@
 import { deleteTrigger } from './trigger';
 import { getSettings } from './server';
-
-const TITLE = 'Website Monitor';
+import { TITLE } from './utils';
 
 export const onOpen = () => {
   const sheet = SpreadsheetApp.getActiveSpreadsheet();

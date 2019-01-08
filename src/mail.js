@@ -1,4 +1,4 @@
-import { expBackoff, logException } from './utils';
+import { expBackoff, logException, TITLE } from './utils';
 
 const sendEmailAlert = (settings, status) => {
   try {
@@ -12,7 +12,7 @@ const sendEmailAlert = (settings, status) => {
       html.sheet = sheet;
       MailApp.sendEmail(email, subject, `${site} is ${status}`, {
         htmlBody: html.evaluate().getContent(),
-        name: 'Website Monitor',
+        name: TITLE,
         replyTo: 'amit@labnol.org'
       });
     }

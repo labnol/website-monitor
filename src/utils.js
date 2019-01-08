@@ -23,3 +23,5 @@ export const sleep = (seconds = 1) => {
 
 export const include = filename =>
   HtmlService.createHtmlOutputFromFile(filename).getContent();
+
+export const TITLE = 'Website Monitor';

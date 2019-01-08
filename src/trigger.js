@@ -18,7 +18,7 @@ const toggleTrigger = enableTrigger => {
     if (!triggerList[TRIGGER]) {
       ScriptApp.newTrigger(TRIGGER)
         .timeBased()
-        .everyMinutes(10)
+        .everyMinutes(5)
         .create();
       sleep();
     }

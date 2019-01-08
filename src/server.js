@@ -1,5 +1,6 @@
 import properties from './props';
 import { createTrigger } from './trigger';
+import { TITLE } from './utils';
 
 const SETTINGS = 'settings';
 const LAST_STATUS = 'status';
@@ -7,9 +8,7 @@ const LAST_STATUS = 'status';
 export const saveSettings = value => {
   properties.setUserProperty(SETTINGS, value);
   createTrigger();
-  SpreadsheetApp.getActiveSpreadsheet().toast(
-    'Website Monitor is now running!'
-  );
+  SpreadsheetApp.getActiveSpreadsheet().toast(`${TITLE} is now running!`);
   return 'Settings updated!';
 };
 

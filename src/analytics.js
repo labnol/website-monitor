@@ -1,4 +1,4 @@
-import { logException } from './utils';
+import { logException, TITLE } from './utils';
 
 const s4 = () =>
   Math.floor((1 + Math.random()) * 0x10000)
@@ -14,7 +14,7 @@ const writeToGoogleAnalytics = (id, site, status) => {
       const request = [
         'https://ssl.google-analytics.com/collect?v=1',
         't=event',
-        `ec=${encodeURIComponent('Website Monitor')}`,
+        `ec=${encodeURIComponent(TITLE)}`,
         `tid=${id}`,
         `z=${Math.round(new Date().getTime() / 1000).toString()}`,
         `cid=${guid()}`,
