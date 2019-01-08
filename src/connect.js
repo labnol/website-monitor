@@ -1,4 +1,4 @@
-import { logException } from './utils';
+import { logException, SUCCESS } from './utils';
 
 const sitecall = func => {
   const MAX = 3;
@@ -28,7 +28,7 @@ const getSiteStatus = (url = '') => {
     return response.getResponseCode();
   } catch (f) {
     logException(f);
-    return 99;
+    return SUCCESS - 1;
   }
 };
 

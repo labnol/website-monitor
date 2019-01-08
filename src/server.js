@@ -1,6 +1,6 @@
 import properties from './props';
 import { createTrigger } from './trigger';
-import { TITLE, CODES } from './utils';
+import { TITLE, SUCCESS } from './utils';
 
 const SETTINGS = 'settings';
 const LAST_STATUS = 'status';
@@ -9,7 +9,7 @@ export const getSettings = () =>
   properties.getUserProperty(SETTINGS, true) || {};
 
 export const getLastStatus = () => {
-  const lastStatus = properties.getUserProperty(LAST_STATUS) || CODES.SUCCESS;
+  const lastStatus = properties.getUserProperty(LAST_STATUS) || SUCCESS;
   return +lastStatus;
 };
 
@@ -19,7 +19,7 @@ export const setLastStatus = status => {
 
 export const saveSettings = value => {
   properties.setUserProperty(SETTINGS, value);
-  setLastStatus(CODES.SUCCESS);
+  setLastStatus(SUCCESS);
   createTrigger();
   SpreadsheetApp.getActiveSpreadsheet().toast(`${TITLE} is now running!`);
   return 'Settings updated!';

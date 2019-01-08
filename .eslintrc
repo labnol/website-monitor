@@ -16,8 +16,5 @@
   "rules": {
     "prettier/prettier": "error",
     "import/prefer-default-export": "error"
-  },
-  "globals": {
-    "Gmail": true
   }
 }

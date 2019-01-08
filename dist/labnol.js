@@ -57,10 +57,10 @@
         return include;
     }), __webpack_require__.d(__webpack_exports__, "c", function() {
         return TITLE;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
-        return DEVELOPER;
     }), __webpack_require__.d(__webpack_exports__, "a", function() {
-        return CODES;
+        return DEVELOPER;
+    }), __webpack_require__.d(__webpack_exports__, "b", function() {
+        return SUCCESS;
     });
     var logException = function logException(e) {
         console.error(e);
@@ -77,9 +77,7 @@
         Utilities.sleep(1e3 * seconds);
     }, include = function include(filename) {
         return HtmlService.createHtmlOutputFromFile(filename).getContent();
-    }, TITLE = "Website Monitor", DEVELOPER = "amit@labnol.org", CODES = {
-        SUCCESS: 200
-    };
+    }, TITLE = "Website Monitor", DEVELOPER = "amit@labnol.org", SUCCESS = 200;
 }, function(module, __webpack_exports__, __webpack_require__) {
     "use strict";
     var utils = __webpack_require__(0);
@@ -207,11 +205,11 @@
     var server_getSettings = function() {
         return props.getUserProperty("settings", !0) || {};
     }, server_getLastStatus = function() {
-        return +(props.getUserProperty("status") || utils["a"].SUCCESS);
+        return +(props.getUserProperty("status") || utils["b"]);
     }, server_setLastStatus = function(status) {
         props.setUserProperty("status", status);
     }, server_saveSettings = function(value) {
-        return props.setUserProperty("settings", value), server_setLastStatus(utils["a"].SUCCESS), 
+        return props.setUserProperty("settings", value), server_setLastStatus(utils["b"]), 
         Object(trigger["a"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(utils["c"], " is now running!")), 
         "Settings updated!";
     };
@@ -285,7 +283,7 @@
                 });
             }).getResponseCode();
         } catch (f) {
-            return Object(utils["f"])(f), 99;
+            return Object(utils["f"])(f), utils["b"] - 1;
         }
     }, s4 = function s4() {
         return Math.floor(65536 * (1 + Math.random())).toString(16).substring(1);
@@ -310,7 +308,7 @@
                 html.site = site, html.status = status.toLowerCase(), html.sheet = sheet, MailApp.sendEmail(email, subject, "".concat(site, " is ").concat(status), {
                     htmlBody: html.evaluate().getContent(),
                     name: utils["c"],
-                    replyTo: utils["b"]
+                    replyTo: utils["a"]
                 });
             }
         } catch (f) {
@@ -335,7 +333,7 @@
             var settings = Object(server["b"])();
             if (settings.site) {
                 var newStatus = connect(settings.site), oldStatus = Object(server["a"])();
-                oldStatus !== newStatus && (Object(server["d"])(newStatus), newStatus === utils["a"].SUCCESS ? log(settings, "Up") : oldStatus === utils["a"].SUCCESS && log(settings, "Down"));
+                oldStatus !== newStatus && (Object(server["d"])(newStatus), newStatus === utils["b"] ? log(settings, "Up") : oldStatus === utils["b"] && log(settings, "Down"));
             }
         } catch (f) {
             Object(utils["f"])(f);

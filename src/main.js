@@ -1,7 +1,7 @@
 import { getSettings, getLastStatus, setLastStatus } from './server';
 import getSiteStatus from './connect';
 import logEvent from './log';
-import { logException, CODES } from './utils';
+import { logException, SUCCESS } from './utils';
 
 const main = () => {
   try {
@@ -11,10 +11,10 @@ const main = () => {
       const oldStatus = getLastStatus();
       if (oldStatus !== newStatus) {
         setLastStatus(newStatus);
-        if (newStatus === CODES.SUCCESS) {
+        if (newStatus === SUCCESS) {
           logEvent(settings, 'Up');
           // site is now up
-        } else if (oldStatus === CODES.SUCCESS) {
+        } else if (oldStatus === SUCCESS) {
           // site is down
           logEvent(settings, 'Down');
         } else {

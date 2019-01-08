@@ -28,6 +28,4 @@ export const TITLE = 'Website Monitor';
 
 export const DEVELOPER = 'amit@labnol.org';
 
-export const CODES = {
-  SUCCESS: 200
-};
+export const SUCCESS = 200;
