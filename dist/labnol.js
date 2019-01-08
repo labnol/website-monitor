@@ -1,361 +1,703 @@
-!function(e, a) {
-    for (var i in a) e[i] = a[i];
-}(this, function(modules) {
-    var installedModules = {};
-    function __webpack_require__(moduleId) {
-        if (installedModules[moduleId]) return installedModules[moduleId].exports;
-        var module = installedModules[moduleId] = {
-            i: moduleId,
-            l: !1,
-            exports: {}
-        };
-        return modules[moduleId].call(module.exports, module, module.exports, __webpack_require__), 
-        module.l = !0, module.exports;
+function onOpen() {
+}
+function showSidebar() {
+}
+function uninstall() {
+}
+function trigger_WebsiteMonitor() {
+}
+function include() {
+}
+function saveSettings() {
+}(function(e, a) { for(var i in a) e[i] = a[i]; }(this, /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ })
+/************************************************************************/
+/******/ ([
+/* 0 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(5);
+/*
+
+   Website Monitor 6.0 by Digital Inspiration    
+   ==========================================   
+
+   Published by Amit Agarwal on 02/14/2013       
+   Last updated by @labnol on 01/08/2019         
+
+   Tutorial: http://labnol.org/?p=21060         
+
+   email: amit@labnol.org   
+   twitter: @labnol   
+   
+*/
+
+
+
+
+global.onOpen = _ui__WEBPACK_IMPORTED_MODULE_0__["onOpen"];
+global.showSidebar = _ui__WEBPACK_IMPORTED_MODULE_0__["showSidebar"];
+global.uninstall = _ui__WEBPACK_IMPORTED_MODULE_0__["removeWebsiteMonitor"];
+global.trigger_WebsiteMonitor = _main__WEBPACK_IMPORTED_MODULE_1__["default"];
+global.include = _utils__WEBPACK_IMPORTED_MODULE_2__["include"];
+global.saveSettings = _server__WEBPACK_IMPORTED_MODULE_3__["saveSettings"];
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports) {
+
+var g;
+
+// This works in non-strict mode
+g = (function() {
+	return this;
+})();
+
+try {
+	// This works if eval is allowed (see CSP)
+	g = g || new Function("return this")();
+} catch (e) {
+	// This works if the window reference is available
+	if (typeof window === "object") g = window;
+}
+
+// g can still be undefined, but nothing to do about it...
+// We return undefined, instead of nothing here, so it's
+// easier to handle this case. if(!global) { ...}
+
+module.exports = g;
+
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onOpen", function() { return onOpen; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "showSidebar", function() { return showSidebar; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeWebsiteMonitor", function() { return removeWebsiteMonitor; });
+/* harmony import */ var _trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3);
+/* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(5);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+
+
+
+var onOpen = function onOpen() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet();
+  var menu = [{
+    name: 'Configure',
+    functionName: 'showSidebar'
+  }, null, {
+    name: '✖ Uninstall',
+    functionName: 'uninstall'
+  }];
+  sheet.addMenu("\u27AA ".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["TITLE"]), menu);
+};
+var showSidebar = function showSidebar() {
+  var html = HtmlService.createTemplateFromFile('sidebar');
+
+  var _getSettings = Object(_server__WEBPACK_IMPORTED_MODULE_1__["getSettings"])(),
+      _getSettings$site = _getSettings.site,
+      site = _getSettings$site === void 0 ? '' : _getSettings$site,
+      _getSettings$email = _getSettings.email,
+      email = _getSettings$email === void 0 ? '' : _getSettings$email,
+      _getSettings$ga = _getSettings.ga,
+      ga = _getSettings$ga === void 0 ? '' : _getSettings$ga;
+
+  html.site = site;
+  html.email = email;
+  html.ga = ga;
+  html.sheet = SpreadsheetApp.getActiveSpreadsheet().getUrl();
+  var sidebar = html.evaluate().setTitle(_utils__WEBPACK_IMPORTED_MODULE_2__["TITLE"]);
+  SpreadsheetApp.getUi().showSidebar(sidebar);
+};
+var removeWebsiteMonitor = function removeWebsiteMonitor() {
+  Object(_trigger__WEBPACK_IMPORTED_MODULE_0__["deleteTrigger"])();
+  SpreadsheetApp.getActiveSpreadsheet().toast("".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["TITLE"], " stopped!"));
+};
+
+/***/ }),
+/* 3 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "deleteTrigger", function() { return deleteTrigger; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createTrigger", function() { return createTrigger; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+var TRIGGER = 'trigger_WebsiteMonitor';
+var INTERVAL = 5;
+
+var toggleTrigger = function toggleTrigger(enableTrigger) {
+  var triggerList = {};
+  ScriptApp.getProjectTriggers().forEach(function (trigger) {
+    if (enableTrigger) {
+      triggerList[trigger.getHandlerFunction()] = true;
+    } else {
+      Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+        return ScriptApp.deleteTrigger(trigger);
+      });
+      Object(_utils__WEBPACK_IMPORTED_MODULE_0__["sleep"])();
     }
-    return __webpack_require__.m = modules, __webpack_require__.c = installedModules, 
-    __webpack_require__.d = function(exports, name, getter) {
-        __webpack_require__.o(exports, name) || Object.defineProperty(exports, name, {
-            enumerable: !0,
-            get: getter
-        });
-    }, __webpack_require__.r = function(exports) {
-        "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(exports, Symbol.toStringTag, {
-            value: "Module"
-        }), Object.defineProperty(exports, "__esModule", {
-            value: !0
-        });
-    }, __webpack_require__.t = function(value, mode) {
-        if (1 & mode && (value = __webpack_require__(value)), 8 & mode) return value;
-        if (4 & mode && "object" == typeof value && value && value.__esModule) return value;
-        var ns = Object.create(null);
-        if (__webpack_require__.r(ns), Object.defineProperty(ns, "default", {
-            enumerable: !0,
-            value: value
-        }), 2 & mode && "string" != typeof value) for (var key in value) __webpack_require__.d(ns, key, function(key) {
-            return value[key];
-        }.bind(null, key));
-        return ns;
-    }, __webpack_require__.n = function(module) {
-        var getter = module && module.__esModule ? function() {
-            return module["default"];
-        } : function() {
-            return module;
-        };
-        return __webpack_require__.d(getter, "a", getter), getter;
-    }, __webpack_require__.o = function(object, property) {
-        return Object.prototype.hasOwnProperty.call(object, property);
-    }, __webpack_require__.p = "", __webpack_require__(__webpack_require__.s = 5);
-}([ function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.d(__webpack_exports__, "f", function() {
-        return logException;
-    }), __webpack_require__.d(__webpack_exports__, "d", function() {
-        return expBackoff;
-    }), __webpack_require__.d(__webpack_exports__, "g", function() {
-        return sleep;
-    }), __webpack_require__.d(__webpack_exports__, "e", function() {
-        return include;
-    }), __webpack_require__.d(__webpack_exports__, "c", function() {
-        return TITLE;
-    }), __webpack_require__.d(__webpack_exports__, "a", function() {
-        return DEVELOPER;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
-        return SUCCESS;
-    });
-    var logException = function logException(e) {
-        console.error(e);
-    }, expBackoff = function expBackoff(func) {
-        for (var max = 1 < arguments.length && arguments[1] !== undefined ? arguments[1] : 6, n = 0; n < max; n += 1) try {
-            return func();
-        } catch (e) {
-            if (n === max - 1) throw logException(e), e;
-            Utilities.sleep(1e3 * Math.pow(2, n) + Math.round(1e3 * Math.random()));
-        }
-        return null;
-    }, sleep = function sleep() {
-        var seconds = 0 < arguments.length && arguments[0] !== undefined ? arguments[0] : 1;
-        Utilities.sleep(1e3 * seconds);
-    }, include = function include(filename) {
-        return HtmlService.createHtmlOutputFromFile(filename).getContent();
-    }, TITLE = "Website Monitor", DEVELOPER = "amit@labnol.org", SUCCESS = 200;
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    var utils = __webpack_require__(0);
-    function _defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, 
-            "value" in descriptor && (descriptor.writable = !0), Object.defineProperty(target, descriptor.key, descriptor);
-        }
+  });
+
+  if (enableTrigger) {
+    if (!triggerList[TRIGGER]) {
+      ScriptApp.newTrigger(TRIGGER).timeBased().everyMinutes(INTERVAL).create();
+      Object(_utils__WEBPACK_IMPORTED_MODULE_0__["sleep"])();
     }
-    var src_cache = new (function() {
-        function Cache() {
-            !function _classCallCheck(instance, Constructor) {
-                if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-            }(this, Cache), this.userCache = null, this.docCache = null;
-        }
-        return function _createClass(Constructor, protoProps, staticProps) {
-            return protoProps && _defineProperties(Constructor.prototype, protoProps), staticProps && _defineProperties(Constructor, staticProps), 
-            Constructor;
-        }(Cache, [ {
-            key: "getUserCache",
-            value: function() {
-                if (null === this.userCache) try {
-                    this.userCache = Object(utils["d"])(function() {
-                        return CacheService.getUserCache();
-                    });
-                } catch (f) {
-                    this.userCache = !1;
-                }
-                return this.userCache;
-            }
-        }, {
-            key: "getUserCacheValue",
-            value: function(key) {
-                var json = 1 < arguments.length && arguments[1] !== undefined && arguments[1];
-                if (!this.getUserCache()) return null;
-                try {
-                    var value = this.getUserCache().get(key);
-                    if (value) return json ? JSON.parse(value) : value;
-                } catch (f) {}
-                return null;
-            }
-        }, {
-            key: "setUserCacheValue",
-            value: function(key, value) {
-                var json = 2 < arguments.length && arguments[2] !== undefined && arguments[2];
-                if (this.getUserCache()) try {
-                    if (!value || json && !Object.keys(value).length) return void this.deleteUserCacheValue(key);
-                    this.getUserCache().put(key, json ? JSON.stringify(value) : value, 21600);
-                } catch (f) {}
-            }
-        }, {
-            key: "deleteUserCacheValue",
-            value: function(key) {
-                this.getUserCache() && this.getUserCache().remove(key);
-            }
-        } ]), Cache;
-    }())();
-    function props_defineProperties(target, props) {
-        for (var i = 0; i < props.length; i++) {
-            var descriptor = props[i];
-            descriptor.enumerable = descriptor.enumerable || !1, descriptor.configurable = !0, 
-            "value" in descriptor && (descriptor.writable = !0), Object.defineProperty(target, descriptor.key, descriptor);
-        }
-    }
-    var props = new (function() {
-        function Properties() {
-            !function props_classCallCheck(instance, Constructor) {
-                if (!(instance instanceof Constructor)) throw new TypeError("Cannot call a class as a function");
-            }(this, Properties), this.userProps = null;
-        }
-        return function props_createClass(Constructor, protoProps, staticProps) {
-            return protoProps && props_defineProperties(Constructor.prototype, protoProps), 
-            staticProps && props_defineProperties(Constructor, staticProps), Constructor;
-        }(Properties, [ {
-            key: "getUserProps",
-            value: function() {
-                if (null === this.userProps) try {
-                    this.userProps = Object(utils["d"])(function() {
-                        return PropertiesService.getUserProperties();
-                    });
-                } catch (f) {
-                    this.userProps = !1;
-                }
-                return this.userProps;
-            }
-        }, {
-            key: "getUserProperty",
-            value: function(key) {
-                var json = 1 < arguments.length && arguments[1] !== undefined && arguments[1];
-                if (!this.getUserProps()) return null;
-                var value = src_cache.getUserCacheValue("user".concat(key)) || this.getUserProps().getProperty(key);
-                return json ? JSON.parse(value || "{}") : value;
-            }
-        }, {
-            key: "setUserProperty",
-            value: function(key, value) {
-                var json = 2 < arguments.length && arguments[2] !== undefined && arguments[2];
-                if (this.getUserProps()) {
-                    var save = json ? JSON.stringify(value) : value;
-                    src_cache.setUserCacheValue("user".concat(key), save), this.getUserProps().setProperty(key, save);
-                }
-            }
-        }, {
-            key: "deleteUserProperty",
-            value: function(key) {
-                this.getUserProps() && (src_cache.deleteUserCacheValue("user".concat(key)), this.getUserProps().deleteProperty(key));
-            }
-        }, {
-            key: "deleteUserProperties",
-            value: function() {
-                this.getUserProps() && this.getUserProps().deleteAllProperties();
-            }
-        } ]), Properties;
-    }())(), trigger = __webpack_require__(2);
-    __webpack_require__.d(__webpack_exports__, "b", function() {
-        return server_getSettings;
-    }), __webpack_require__.d(__webpack_exports__, "a", function() {
-        return server_getLastStatus;
-    }), __webpack_require__.d(__webpack_exports__, "d", function() {
-        return server_setLastStatus;
-    }), __webpack_require__.d(__webpack_exports__, "c", function() {
-        return server_saveSettings;
-    });
-    var server_getSettings = function() {
-        return props.getUserProperty("settings", !0) || {};
-    }, server_getLastStatus = function() {
-        return +(props.getUserProperty("status") || utils["b"]);
-    }, server_setLastStatus = function(status) {
-        props.setUserProperty("status", status);
-    }, server_saveSettings = function(value) {
-        return props.setUserProperty("settings", value), server_setLastStatus(utils["b"]), 
-        Object(trigger["a"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(utils["c"], " is now running!")), 
-        "Settings updated!";
-    };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.d(__webpack_exports__, "b", function() {
-        return deleteTrigger;
-    }), __webpack_require__.d(__webpack_exports__, "a", function() {
-        return createTrigger;
-    });
-    var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(0), TRIGGER = "trigger_WebsiteMonitor", toggleTrigger = function toggleTrigger(enableTrigger) {
-        var triggerList = {};
-        ScriptApp.getProjectTriggers().forEach(function(trigger) {
-            enableTrigger ? triggerList[trigger.getHandlerFunction()] = !0 : (Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
-                return ScriptApp.deleteTrigger(trigger);
-            }), Object(_utils__WEBPACK_IMPORTED_MODULE_0__["g"])());
-        }), enableTrigger && (triggerList[TRIGGER] || (ScriptApp.newTrigger(TRIGGER).timeBased().everyMinutes(5).create(), 
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["g"])()));
-    }, deleteTrigger = function deleteTrigger() {
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
-            return toggleTrigger(!1);
-        });
-    }, createTrigger = function createTrigger() {
-        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["d"])(function() {
-            return toggleTrigger(!0);
-        });
-    };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.d(__webpack_exports__, "a", function() {
-        return onOpen;
-    }), __webpack_require__.d(__webpack_exports__, "c", function() {
-        return showSidebar;
-    }), __webpack_require__.d(__webpack_exports__, "b", function() {
-        return removeWebsiteMonitor;
-    });
-    var _trigger__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2), _server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1), _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0), onOpen = function onOpen() {
-        SpreadsheetApp.getActiveSpreadsheet().addMenu("➪ ".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["c"]), [ {
-            name: "Configure",
-            functionName: "showSidebar"
-        }, null, {
-            name: "✖ Uninstall",
-            functionName: "uninstall"
-        } ]);
-    }, showSidebar = function showSidebar() {
-        var html = HtmlService.createTemplateFromFile("sidebar"), _getSettings = Object(_server__WEBPACK_IMPORTED_MODULE_1__["b"])(), _getSettings$site = _getSettings.site, site = void 0 === _getSettings$site ? "" : _getSettings$site, _getSettings$email = _getSettings.email, email = void 0 === _getSettings$email ? "" : _getSettings$email, _getSettings$ga = _getSettings.ga, ga = void 0 === _getSettings$ga ? "" : _getSettings$ga;
-        html.site = site, html.email = email, html.ga = ga, html.sheet = SpreadsheetApp.getActiveSpreadsheet().getUrl();
-        var sidebar = html.evaluate().setTitle(_utils__WEBPACK_IMPORTED_MODULE_2__["c"]);
-        SpreadsheetApp.getUi().showSidebar(sidebar);
-    }, removeWebsiteMonitor = function removeWebsiteMonitor() {
-        Object(_trigger__WEBPACK_IMPORTED_MODULE_0__["b"])(), SpreadsheetApp.getActiveSpreadsheet().toast("".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["c"], " stopped!"));
-    };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    var server = __webpack_require__(1), utils = __webpack_require__(0), connect = function() {
-        var url = 0 < arguments.length && arguments[0] !== undefined ? arguments[0] : "";
-        try {
-            return function(func) {
-                for (var n = 0; n < 3; n += 1) try {
-                    return func();
-                } catch (e) {
-                    if (2 === n) throw Object(utils["f"])(e), e;
-                    Utilities.sleep(2e4 * Math.pow(2, n) + Math.round(1e3 * Math.random()));
-                }
-                return null;
-            }(function() {
-                return UrlFetchApp.fetch(url, {
-                    validateHttpsCertificates: !1,
-                    followRedirects: !0,
-                    muteHttpExceptions: !1
-                });
-            }).getResponseCode();
-        } catch (f) {
-            return Object(utils["f"])(f), utils["b"] - 1;
-        }
-    }, s4 = function s4() {
-        return Math.floor(65536 * (1 + Math.random())).toString(16).substring(1);
-    }, guid = function guid() {
-        return "".concat(s4()).concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4()).concat(s4()).concat(s4());
-    }, analytics = function(id, site, status) {
-        if (id) try {
-            var request = [ "https://ssl.google-analytics.com/collect?v=1", "t=event", "ec=".concat(encodeURIComponent(utils["c"])), "tid=".concat(id), "z=".concat(Math.round(new Date().getTime() / 1e3)), "cid=".concat(guid()), "ea=".concat(encodeURIComponent(site)), "el=".concat(status) ].join("&");
-            UrlFetchApp.fetch(request, {
-                muteHttpExceptions: !0
-            });
-        } catch (e) {
-            Object(utils["f"])(e);
-        }
-    }, mail = function(settings, status) {
-        try {
-            var site = settings.site, _settings$email = settings.email, email = void 0 === _settings$email ? "" : _settings$email, _settings$sheet = settings.sheet, sheet = void 0 === _settings$sheet ? "" : _settings$sheet, subject = "Website ".concat(status, " Alert - ").concat(site);
-            if (1 < Object(utils["d"])(function() {
-                return MailApp.getRemainingDailyQuota();
-            })) {
-                var html = HtmlService.createTemplateFromFile("email");
-                html.site = site, html.status = status.toLowerCase(), html.sheet = sheet, MailApp.sendEmail(email, subject, "".concat(site, " is ").concat(status), {
-                    htmlBody: html.evaluate().getContent(),
-                    name: utils["c"],
-                    replyTo: utils["a"]
-                });
-            }
-        } catch (f) {
-            Object(utils["f"])(f);
-        }
-    }, log = function(settings, status) {
-        try {
-            var site = settings.site, _settings$ga = settings.ga, ga = void 0 === _settings$ga ? "" : _settings$ga;
-            !function(message) {
-                try {
-                    SpreadsheetApp.getActiveSheet().appendRow([ new Date(), message ]);
-                } catch (f) {
-                    Object(utils["f"])(f);
-                }
-            }([ site, "is", status ].join(" ")), analytics(ga, site, status), mail(settings, status);
-        } catch (f) {
-            Object(utils["f"])(f);
-        }
-    };
-    __webpack_exports__["a"] = function() {
-        try {
-            var settings = Object(server["b"])();
-            if (settings.site) {
-                var newStatus = connect(settings.site), oldStatus = Object(server["a"])();
-                oldStatus !== newStatus && (Object(server["d"])(newStatus), newStatus === utils["b"] ? log(settings, "Up") : oldStatus === utils["b"] && log(settings, "Down"));
-            }
-        } catch (f) {
-            Object(utils["f"])(f);
-        }
-    };
-}, function(module, __webpack_exports__, __webpack_require__) {
-    "use strict";
-    __webpack_require__.r(__webpack_exports__), function(global) {
-        var _ui__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(3), _main__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4), _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(0), _server__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1);
-        global.onOpen = _ui__WEBPACK_IMPORTED_MODULE_0__["a"], global.showSidebar = _ui__WEBPACK_IMPORTED_MODULE_0__["c"], 
-        global.uninstall = _ui__WEBPACK_IMPORTED_MODULE_0__["b"], global.trigger_WebsiteMonitor = _main__WEBPACK_IMPORTED_MODULE_1__["a"], 
-        global.include = _utils__WEBPACK_IMPORTED_MODULE_2__["e"], global.saveSettings = _server__WEBPACK_IMPORTED_MODULE_3__["c"];
-    }.call(this, __webpack_require__(6));
-}, function(module, exports) {
-    var g;
-    g = function() {
-        return this;
-    }();
+  }
+};
+
+var deleteTrigger = function deleteTrigger() {
+  Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+    return toggleTrigger(false);
+  });
+};
+var createTrigger = function createTrigger() {
+  Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+    return toggleTrigger(true);
+  });
+};
+
+/***/ }),
+/* 4 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logException", function() { return logException; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "expBackoff", function() { return expBackoff; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sleep", function() { return sleep; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "include", function() { return include; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TITLE", function() { return TITLE; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEVELOPER", function() { return DEVELOPER; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SUCCESS", function() { return SUCCESS; });
+var logException = function logException(e) {
+  console.error(e);
+};
+var expBackoff = function expBackoff(func) {
+  var max = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+
+  for (var n = 0; n < max; n += 1) {
     try {
-        g = g || new Function("return this")();
+      return func();
     } catch (e) {
-        "object" == typeof window && (g = window);
+      if (n === max - 1) {
+        logException(e);
+        throw e;
+      }
+
+      Utilities.sleep(Math.pow(2, n) * 1000 + Math.round(Math.random() * 1000));
     }
-    module.exports = g;
-} ]));
+  }
+
+  return null;
+};
+var sleep = function sleep() {
+  var seconds = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;
+  Utilities.sleep(seconds * 1000);
+};
+var include = function include(filename) {
+  return HtmlService.createHtmlOutputFromFile(filename).getContent();
+};
+var TITLE = 'Website Monitor';
+var DEVELOPER = 'amit@labnol.org';
+var SUCCESS = 200;
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getSettings", function() { return getSettings; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getLastStatus", function() { return getLastStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setLastStatus", function() { return setLastStatus; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "saveSettings", function() { return saveSettings; });
+/* harmony import */ var _props__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
+/* harmony import */ var _trigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+
+
+
+var SETTINGS = 'settings';
+var LAST_STATUS = 'status';
+var getSettings = function getSettings() {
+  return _props__WEBPACK_IMPORTED_MODULE_0__["default"].getUserProperty(SETTINGS, true) || {};
+};
+var getLastStatus = function getLastStatus() {
+  var lastStatus = _props__WEBPACK_IMPORTED_MODULE_0__["default"].getUserProperty(LAST_STATUS) || _utils__WEBPACK_IMPORTED_MODULE_2__["SUCCESS"];
+  return +lastStatus;
+};
+var setLastStatus = function setLastStatus(status) {
+  _props__WEBPACK_IMPORTED_MODULE_0__["default"].setUserProperty(LAST_STATUS, status);
+};
+var saveSettings = function saveSettings(value) {
+  _props__WEBPACK_IMPORTED_MODULE_0__["default"].setUserProperty(SETTINGS, value);
+  setLastStatus(_utils__WEBPACK_IMPORTED_MODULE_2__["SUCCESS"]);
+  Object(_trigger__WEBPACK_IMPORTED_MODULE_1__["createTrigger"])();
+  SpreadsheetApp.getActiveSpreadsheet().toast("".concat(_utils__WEBPACK_IMPORTED_MODULE_2__["TITLE"], " is now running!"));
+  return 'Settings updated!';
+};
+
+/***/ }),
+/* 6 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+/* harmony import */ var _cache__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+
+var Properties =
+/*#__PURE__*/
+function () {
+  function Properties() {
+    _classCallCheck(this, Properties);
+
+    this.userProps = null;
+  }
+
+  _createClass(Properties, [{
+    key: "getUserProps",
+    value: function getUserProps() {
+      if (this.userProps === null) {
+        try {
+          this.userProps = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+            return PropertiesService.getUserProperties();
+          });
+        } catch (f) {
+          this.userProps = false;
+        }
+      }
+
+      return this.userProps;
+    }
+  }, {
+    key: "getUserProperty",
+    value: function getUserProperty(key) {
+      var json = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      if (!this.getUserProps()) return null;
+      var value = _cache__WEBPACK_IMPORTED_MODULE_1__["default"].getUserCacheValue("user".concat(key)) || this.getUserProps().getProperty(key);
+      return json ? JSON.parse(value || '{}') : value;
+    }
+  }, {
+    key: "setUserProperty",
+    value: function setUserProperty(key, value) {
+      var json = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+
+      if (this.getUserProps()) {
+        var save = json ? JSON.stringify(value) : value;
+        _cache__WEBPACK_IMPORTED_MODULE_1__["default"].setUserCacheValue("user".concat(key), save);
+        this.getUserProps().setProperty(key, save);
+      }
+    }
+  }, {
+    key: "deleteUserProperty",
+    value: function deleteUserProperty(key) {
+      if (this.getUserProps()) {
+        _cache__WEBPACK_IMPORTED_MODULE_1__["default"].deleteUserCacheValue("user".concat(key));
+        this.getUserProps().deleteProperty(key);
+      }
+    }
+  }, {
+    key: "deleteUserProperties",
+    value: function deleteUserProperties() {
+      if (this.getUserProps()) {
+        this.getUserProps().deleteAllProperties();
+      }
+    }
+  }]);
+
+  return Properties;
+}();
+
+var properties = new Properties();
+/* harmony default export */ __webpack_exports__["default"] = (properties);
+
+/***/ }),
+/* 7 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Cache =
+/*#__PURE__*/
+function () {
+  function Cache() {
+    _classCallCheck(this, Cache);
+
+    this.userCache = null;
+    this.docCache = null;
+  }
+
+  _createClass(Cache, [{
+    key: "getUserCache",
+    value: function getUserCache() {
+      if (this.userCache === null) {
+        try {
+          this.userCache = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+            return CacheService.getUserCache();
+          });
+        } catch (f) {
+          this.userCache = false;
+        }
+      }
+
+      return this.userCache;
+    }
+  }, {
+    key: "getUserCacheValue",
+    value: function getUserCacheValue(key) {
+      var json = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
+      if (!this.getUserCache()) return null;
+
+      try {
+        var value = this.getUserCache().get(key);
+
+        if (value) {
+          return json ? JSON.parse(value) : value;
+        }
+      } catch (f) {// do nothing
+      }
+
+      return null;
+    }
+  }, {
+    key: "setUserCacheValue",
+    value: function setUserCacheValue(key, value) {
+      var json = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : false;
+      if (!this.getUserCache()) return;
+
+      try {
+        if (!value || json && !Object.keys(value).length) {
+          this.deleteUserCacheValue(key);
+          return;
+        }
+
+        this.getUserCache().put(key, json ? JSON.stringify(value) : value, 21600);
+      } catch (f) {// do nothing
+      }
+    }
+  }, {
+    key: "deleteUserCacheValue",
+    value: function deleteUserCacheValue(key) {
+      if (this.getUserCache()) this.getUserCache().remove(key);
+    }
+  }]);
+
+  return Cache;
+}();
+
+var cache = new Cache();
+/* harmony default export */ __webpack_exports__["default"] = (cache);
+
+/***/ }),
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(5);
+/* harmony import */ var _connect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9);
+/* harmony import */ var _log__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+
+
+
+
+
+var main = function main() {
+  try {
+    var settings = Object(_server__WEBPACK_IMPORTED_MODULE_0__["getSettings"])();
+
+    if (settings.site) {
+      var newStatus = Object(_connect__WEBPACK_IMPORTED_MODULE_1__["default"])(settings.site);
+      var oldStatus = Object(_server__WEBPACK_IMPORTED_MODULE_0__["getLastStatus"])();
+
+      if (oldStatus !== newStatus) {
+        Object(_server__WEBPACK_IMPORTED_MODULE_0__["setLastStatus"])(newStatus);
+
+        if (newStatus === _utils__WEBPACK_IMPORTED_MODULE_3__["SUCCESS"]) {
+          Object(_log__WEBPACK_IMPORTED_MODULE_2__["default"])(settings, 'Up'); // site is now up
+        } else if (oldStatus === _utils__WEBPACK_IMPORTED_MODULE_3__["SUCCESS"]) {
+          // site is down
+          Object(_log__WEBPACK_IMPORTED_MODULE_2__["default"])(settings, 'Down');
+        } else {// site continues to be down
+          // do nothing
+        }
+      }
+    }
+  } catch (f) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_3__["logException"])(f);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (main);
+
+/***/ }),
+/* 9 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
+var sitecall = function sitecall(func) {
+  var MAX = 3;
+
+  for (var n = 0; n < MAX; n += 1) {
+    try {
+      return func();
+    } catch (e) {
+      if (n === MAX - 1) {
+        Object(_utils__WEBPACK_IMPORTED_MODULE_0__["logException"])(e);
+        throw e;
+      }
+
+      Utilities.sleep(Math.pow(2, n) * 20000 + Math.round(Math.random() * 1000));
+    }
+  }
+
+  return null;
+};
+
+var getSiteStatus = function getSiteStatus() {
+  var url = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+  try {
+    var response = sitecall(function () {
+      return UrlFetchApp.fetch(url, {
+        validateHttpsCertificates: false,
+        followRedirects: true,
+        muteHttpExceptions: false
+      });
+    });
+    return response.getResponseCode();
+  } catch (f) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_0__["logException"])(f);
+    return _utils__WEBPACK_IMPORTED_MODULE_0__["SUCCESS"] - 1;
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (getSiteStatus);
+
+/***/ }),
+/* 10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _analytics__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(11);
+/* harmony import */ var _mail__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+
+
+
+
+var writeToGoogleSheet = function writeToGoogleSheet(message) {
+  try {
+    SpreadsheetApp.getActiveSheet().appendRow([new Date(), message]);
+  } catch (f) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_2__["logException"])(f);
+  }
+};
+
+var logEvent = function logEvent(settings, status) {
+  try {
+    var site = settings.site,
+        _settings$ga = settings.ga,
+        ga = _settings$ga === void 0 ? '' : _settings$ga;
+    writeToGoogleSheet([site, 'is', status].join(' '));
+    Object(_analytics__WEBPACK_IMPORTED_MODULE_0__["default"])(ga, site, status);
+    Object(_mail__WEBPACK_IMPORTED_MODULE_1__["default"])(settings, status);
+  } catch (f) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_2__["logException"])(f);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (logEvent);
+
+/***/ }),
+/* 11 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
+var s4 = function s4() {
+  return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+};
+
+var guid = function guid() {
+  return "".concat(s4()).concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4(), "-").concat(s4()).concat(s4()).concat(s4());
+};
+
+var writeToGoogleAnalytics = function writeToGoogleAnalytics(id, site, status) {
+  if (id) {
+    try {
+      var request = ['https://ssl.google-analytics.com/collect?v=1', 't=event', "ec=".concat(encodeURIComponent(_utils__WEBPACK_IMPORTED_MODULE_0__["TITLE"])), "tid=".concat(id), "z=".concat(Math.round(new Date().getTime() / 1000)), "cid=".concat(guid()), "ea=".concat(encodeURIComponent(site)), "el=".concat(status)].join('&');
+      UrlFetchApp.fetch(request, {
+        muteHttpExceptions: true
+      });
+    } catch (e) {
+      Object(_utils__WEBPACK_IMPORTED_MODULE_0__["logException"])(e);
+    }
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (writeToGoogleAnalytics);
+
+/***/ }),
+/* 12 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4);
+
+
+var sendEmailAlert = function sendEmailAlert(settings, status) {
+  try {
+    var site = settings.site,
+        _settings$email = settings.email,
+        email = _settings$email === void 0 ? '' : _settings$email,
+        _settings$sheet = settings.sheet,
+        sheet = _settings$sheet === void 0 ? '' : _settings$sheet;
+    var subject = "Website ".concat(status, " Alert - ").concat(site);
+    var quota = Object(_utils__WEBPACK_IMPORTED_MODULE_0__["expBackoff"])(function () {
+      return MailApp.getRemainingDailyQuota();
+    });
+
+    if (quota > 1) {
+      var html = HtmlService.createTemplateFromFile('email');
+      html.site = site;
+      html.status = status.toLowerCase();
+      html.sheet = sheet;
+      MailApp.sendEmail(email, subject, "".concat(site, " is ").concat(status), {
+        htmlBody: html.evaluate().getContent(),
+        name: _utils__WEBPACK_IMPORTED_MODULE_0__["TITLE"],
+        replyTo: _utils__WEBPACK_IMPORTED_MODULE_0__["DEVELOPER"]
+      });
+    }
+  } catch (f) {
+    Object(_utils__WEBPACK_IMPORTED_MODULE_0__["logException"])(f);
+  }
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (sendEmailAlert);
+
+/***/ })
+/******/ ])));
