@@ -10,7 +10,7 @@ Setting up website uptime monitor inside Google Sheets is quick and easy.
 
 2\. Go to Website Monitor > Configure and specify the website URL and email address to notify when the website is down or becomes inaccessible.
 
-3\. Click Save to start monitoring the uptime and downtime of the website. The email alerts are sent via the Gmail API.
+3\. save it and start monitoring, also monitor uptime and its respective downtime. The email alerts are sent via the Gmail API.
 
 4\. (Optional) The Google Script can log the downtime in your Google Analytics.
 
