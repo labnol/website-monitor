@@ -26,7 +26,7 @@ The starter kit is used for building popular Google add-ons include [Gmail Mail 
 
 Reach him on [Twitter](https://twitter.com/labnol) or email amit@labnol.org
 
-### License
+### License and Devlop 
 
 MIT License (c) [Amit Agarwal](https://digitalinspiration.com/google-developer)
 
